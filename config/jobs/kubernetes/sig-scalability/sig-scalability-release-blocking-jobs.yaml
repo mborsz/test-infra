@@ -74,6 +74,10 @@ periodics:
       - --
       - --cluster=gce-scale-cluster
       - --env=HEAPSTER_MACHINE_TYPE=n1-standard-32
+      - --env=CONTROLLER_MANAGER_TEST_ARGS=--profiling --kube-api-qps=100 --kube-api-burst=100 --endpointslice-updates-batch-period=500ms
+      - --env=CL2_LOAD_TEST_THROUGHPUT=50
+      - --env=CL2_DELETE_TEST_THROUGHPUT=30
+      - --env=CL2_ENABLE_CLUSTER_OOMS_TRACKER=false
       # TODO(mborsz): Adjust or remove this change once we understand coredns
       # memory usage regression.
       - --env=KUBE_DNS_MEMORY_LIMIT=300Mi
