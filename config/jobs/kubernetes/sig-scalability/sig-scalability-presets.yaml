@@ -315,6 +315,8 @@ presets:
 - labels:
     preset-e2e-scalability-presubmits: "true"
   env:
+  - name: PROMETHEUS_SCRAPE_MASTER_KUBELETS
+    value: true
 
 - labels:
     preset-e2e-scalability-periodics: "true"
@@ -323,5 +325,4 @@ presets:
 - labels:
     preset-e2e-scalability-periodics-master: "true"
   env:
-  - name: PROMETHEUS_SCRAPE_MASTER_KUBELETS
-    value: true
+
